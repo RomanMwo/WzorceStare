@@ -20,7 +20,16 @@ public class Konfiguracja {
 	}
 
 	public IObliczCenePoRabacie getLiczarkaRabatu() {
-		return new ObliczCenePoRabacieKwotowym();
+		return new ObliczCenePoRabacieProcentowym();
 	}
+	
+	public double getKwotaRabatu() {
+		return 1.0;
+	}
+	
+	public double getProcentRabatu() {
+		return 10.0;
+	}
+	
 	
 }
