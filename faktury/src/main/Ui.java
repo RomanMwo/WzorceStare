@@ -3,6 +3,7 @@ package main;
 import java.util.Iterator;
 import java.util.Calendar;
 import magazyn.Towar;
+import main.Wydrukfaktury;
 
 import dokumenty.Faktura;
 import dokumenty.Pozycja;
@@ -25,26 +26,14 @@ public class Ui {
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 		
-		wypiszFakture(f);
+		new Wydrukfaktury().wypiszFakture(f);
 
 		
 		//TEST ZEWN. rabatu
 		LosowyRabat lr=new LosowyRabat();
 		System.out.println(lr.losujRabat());
 	}
-	private static void wypiszFakture(Faktura faktura)
-	{
-		System.out.println("=====================================================");
-		System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
-		System.out.println("Wystawiona dla: "+faktura.getKontrahent());
-		System.out.println("Na kwote: "+faktura.getSuma());
-		Iterator<Pozycja> iteratorPozycji=faktura.getIteratorPozycji();
-		while(iteratorPozycji.hasNext())
-		{
-			Pozycja pozycja=iteratorPozycji.next();
-			System.out.println("Towar: "+pozycja.getNazwa()+" Ilosc: "+pozycja.getIlosc()+" Wartosc:" + pozycja.getWartosc());
-		}
-		System.out.println("=====================================================");
-	}
+	
+	
 
 }
