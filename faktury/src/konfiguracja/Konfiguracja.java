@@ -1,6 +1,7 @@
 package konfiguracja;
 
 import rabaty.IObliczCenePoRabacie;
+import rabaty.LosowyRabatZaadoptowany;
 import rabaty.ObliczCenePoRabacieKwotowym;
 import rabaty.ObliczCenePoRabacieProcentowym;
 
@@ -20,7 +21,7 @@ public class Konfiguracja {
 	}
 
 	public IObliczCenePoRabacie getLiczarkaRabatu() {
-		return new ObliczCenePoRabacieProcentowym();
+		return new LosowyRabatZaadoptowany();
 	}
 	
 	public double getKwotaRabatu() {
